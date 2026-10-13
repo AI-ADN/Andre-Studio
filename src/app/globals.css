@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fefaed;
+  --color-paper: #fffdf7;
+  --color-blush: #f0dfe9;
+  --color-blush-deep: #e5c8d8;
+  --color-ink: #191919;
+  --color-slate: #4b5358;
+  --color-rose: #8f4766;
+  --color-rose-dark: #733852;
+  --color-line: #ead9cf;
+  --color-grid: #e7c3d3;
+
+  --font-display: var(--font-cormorant), "Times New Roman", serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-hand: var(--font-nanum), "Bradley Hand", cursive;
+
+  --shadow-paper: 0 1px 2px rgb(143 71 102 / 0.08), 0 14px 30px -14px rgb(143 71 102 / 0.28);
+  --shadow-lift: 0 2px 4px rgb(143 71 102 / 0.1), 0 24px 44px -18px rgb(143 71 102 / 0.38);
+
+  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --animate-marquee: marquee 38s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Layering scale: content 0, decorations 10, header 40, dock 45, grain 60. */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-slate);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.56 0 0 0 0 0.28 0 0 0 0 0.4 0 0 0 0.09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+::selection {
+  background: var(--color-blush-deep);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-rose);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .paper-lined {
+    background-color: var(--color-paper);
+    background-image:
+      linear-gradient(90deg, transparent 2.75rem, rgb(143 71 102 / 0.28) 2.75rem, rgb(143 71 102 / 0.28) calc(2.75rem + 1px), transparent calc(2.75rem + 1px)),
+      repeating-linear-gradient(to bottom, transparent 0 1.95rem, var(--color-line) 1.95rem 2rem);
+  }
+
+  .paper-grid {
+    background-color: #fbf1f5;
+    background-image:
+      linear-gradient(var(--color-grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-grid) 1px, transparent 1px);
+    background-size: 2.5rem 2.5rem;
+    background-position: -1px -1px;
+  }
+
+  .edge-torn-top {
+    --tooth: 0.5rem;
+    mask:
+      conic-gradient(from 135deg at top, #0000, #000 1deg 89deg, #0000 90deg) top / calc(var(--tooth) * 2) var(--tooth) repeat-x,
+      linear-gradient(#000 0 0) 0 calc(var(--tooth) - 0.5px) / 100% calc(100% - var(--tooth) + 0.5px) no-repeat;
+  }
+
+  .washi {
+    --zig: 0.3rem;
+    mask:
+      conic-gradient(from 45deg at left, #0000, #000 1deg 89deg, #0000 90deg) left / var(--zig) calc(var(--zig) * 2) repeat-y,
+      conic-gradient(from -135deg at right, #0000, #000 1deg 89deg, #0000 90deg) right / var(--zig) calc(var(--zig) * 2) repeat-y,
+      linear-gradient(#000 0 0) center / calc(100% - var(--zig) * 2 + 1px) 100% no-repeat;
+  }
+
+  .text-balance-safe {
+    text-wrap: balance;
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .faq-item::details-content {
+    block-size: 0;
+    overflow: hidden;
+    transition:
+      block-size 0.45s var(--ease-soft),
+      content-visibility 0.45s allow-discrete;
+  }
+  .faq-item[open]::details-content {
+    block-size: auto;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
