@@ -95,10 +95,10 @@ export function Hero() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", stiffness: 60, damping: 18, delay: 0.25 }}
                 style={{ scale: portraitScale }}
-                className="absolute top-[-3.5%] left-[46.6%] aspect-square w-[112%] -translate-x-1/2 origin-top"
+                className="absolute top-[-3%] left-[47.8%] aspect-[3/4] w-[112%] -translate-x-1/2 origin-top"
               >
                 <Image
-                  src="/images/owner-cutout.webp"
+                  src="/images/owner-portrait.webp"
                   alt={dict.hero.ownerAlt}
                   fill
                   priority

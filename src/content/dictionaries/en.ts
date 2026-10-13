@@ -38,7 +38,7 @@ export const en: Dictionary = {
     secondary: "See services",
     ownerAlt: "Andrea Chávez, founder of André Studio",
     hello: "Hi! I'm Andy",
-    experience: "7+ years creating perfect brows",
+    experience: "8+ years creating perfect brows",
   },
   services: {
     title: "Choose what",

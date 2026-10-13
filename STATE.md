@@ -1,5 +1,12 @@
 # STATE.md: André Studio
 
+## 2026-10-13: New owner photo
+
+### Completed
+- Client replaced `references/owner_picture.jpg` with a fuller 3:4 half-body shot. Background removed with the same macOS Vision foreground mask; a leftover grey-wall patch beside the right shoulder/sleeve was removed by colour threshold (low saturation, dark) on components touching the transparent area.
+- Saved as `public/images/owner-portrait.webp` (new name on purpose: `/_next/image` responses are cached 4h, so reusing `owner-cutout.webp` would keep showing the old photo). Old file removed.
+- Hero portrait container changed from `aspect-square` to `aspect-[3/4]` (`top-[-3%] left-[47.8%] w-[112%]`). OG image regenerated with the new photo.
+
 ## 2026-10-12: Phase 1 landing page built
 
 ### Completed

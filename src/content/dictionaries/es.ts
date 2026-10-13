@@ -36,7 +36,7 @@ export const es = {
     secondary: "Ver servicios",
     ownerAlt: "Andrea Chávez, fundadora de André Studio",
     hello: "¡Hola! Soy Andy",
-    experience: "+7 años creando cejas perfectas",
+    experience: "+8 años creando cejas perfectas",
   },
   services: {
     title: "Elige lo que",
@@ -69,7 +69,7 @@ export const es = {
     reasons: [
       { title: "Atención personalizada", text: "Diseñamos tus cejas a tu medida, según tu rostro y estilo." },
       { title: "Técnica avanzada", text: "Técnicas precisas y actualizadas que imitan el vello natural." },
-      { title: "Experiencia comprobada", text: "Más de 7 años creando cejas perfectas, sin dolor." },
+      { title: "Experiencia comprobada", text: "Más de 8 años creando cejas perfectas, sin dolor." },
       { title: "Productos premium", text: "Pigmentos y materiales de alta calidad para un resultado impecable." },
       { title: "Ambiente acogedor", text: "Un estudio cómodo y profesional para que estés súper a gusto." },
       { title: "Seguimiento post-tratamiento", text: "Te acompañamos en la cicatrización y los retoques." },

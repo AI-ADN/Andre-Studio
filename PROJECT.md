@@ -68,7 +68,7 @@ Working specification derived from `CLIENT.md` (user-owned brief), the client's 
 
 ## 6. Assets
 
-- `public/images/owner-cutout.webp`: owner_picture.jpg with background removed locally (macOS Vision); face untouched.
+- `public/images/owner-portrait.webp`: owner_picture.jpg (updated 2026-10-13, 3:4 half-body) with background removed locally (macOS Vision) plus cleanup of a leftover grey-wall patch; face untouched.
 - Real photos from the current site (client work with "André Ch" watermark, studio interior) in `public/images/real/`.
 - AI-generated (Higgsfield, GPT Image 2.5 low quality) for treatments/still lifes that on the current site used Canva stock: `public/images/gen/`. Never used to depict micropigmentation "results".
 - **Usage rights: pending client confirmation** for all photos, including whether the real photos may be reused.
